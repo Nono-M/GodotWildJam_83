@@ -11,13 +11,14 @@ func _ready() -> void:
 	yellow_counter_label = get_tree().root.get_node("Main/Flames/YellowFlame/Counter")
 
 func red_flame(letter):
-	print(letter.get_node("../Label").text)
+	print(letter.get_parent())
 	letter.get_parent().queue_free()
 	var red_counter:int = red_counter_label.text.to_int() - 1
 	red_counter_label.text = "x %d" % red_counter
 	total_flames -= 1
-	if total_flames <= 0:
+	if total_flames <= 0 :
 		check_word()
+	return
 	pass
 
 
@@ -60,6 +61,15 @@ func timer():
 
 func check_word():
 	print("word to be checked")
+	var word_displayer:Node = get_tree().root.get_node("Main/WordDisplayer")
+	var final_word:String
+	
+	for child in word_displayer.get_children():
+		final_word += child.get_node("Label").text
+	
+	print(final_word)
+	
+	
 	pass
 
 
