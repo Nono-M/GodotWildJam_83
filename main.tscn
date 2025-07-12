@@ -5,10 +5,5 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ptgmp")
 
-[node name="WordDisplayer" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-size_flags_horizontal = 4
+[node name="WordDisplayer" type="HBoxContainer" parent="."]
 metadata/_edit_use_anchors_ = true

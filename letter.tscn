@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://diefc30kf4s3j"]
+
+[sub_resource type="FontFile" id="FontFile_71ccx"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_yokvi"]
+font = SubResource("FontFile_71ccx")
+font_size = 60
+
+[node name="Letter" type="Control"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1.0
+label_settings = SubResource("LabelSettings_yokvi")
