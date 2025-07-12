@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://0cyugpbhrcae"]
+
+[ext_resource type="PackedScene" uid="uid://vf72lmhx3ytv" path="res://flame.tscn" id="1_8rsn0"]
+
+[node name="FlamesBox" type="Node2D"]
+
+[node name="RedFlame" parent="." instance=ExtResource("1_8rsn0")]
+
+[node name="BlueFlame" parent="." instance=ExtResource("1_8rsn0")]
+position = Vector2(100, 0)
+
+[node name="YellowFlame" parent="." instance=ExtResource("1_8rsn0")]
+position = Vector2(200, 0)

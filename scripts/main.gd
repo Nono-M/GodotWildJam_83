@@ -12,7 +12,7 @@ var _answers:Array = ["come","cone","cons"]
 func _ready():
 	Global.load_word(_key_word)
 	Global.load_flames(_red_flames, _blue_flames, _yellow_flames)
-	print_tree_pretty()
+	#print_tree_pretty()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

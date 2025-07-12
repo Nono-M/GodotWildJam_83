@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://vf72lmhx3ytv"]
+
+[ext_resource type="Script" path="res://scripts/flames.gd" id="1_7igc5"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jiepy"]
+size = Vector2(50, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_weku2"]
+font_size = 25
+
+[node name="Flame" type="Sprite2D"]
+texture = SubResource("PlaceholderTexture2D_jiepy")
+centered = false
+script = ExtResource("1_7igc5")
+
+[node name="Counter" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 0)
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 85.0
+text = "x1"
+label_settings = SubResource("LabelSettings_weku2")
+horizontal_alignment = 1
+vertical_alignment = 1

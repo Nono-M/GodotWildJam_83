@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfymmbl53tptq"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ptgmp"]
-[ext_resource type="PackedScene" uid="uid://0cyugpbhrcae" path="res://flames.tscn" id="2_tgysf"]
+[ext_resource type="PackedScene" uid="uid://0cyugpbhrcae" path="res://flames_box.tscn" id="2_tgysf"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ptgmp")
@@ -10,4 +10,4 @@ script = ExtResource("1_ptgmp")
 metadata/_edit_use_anchors_ = true
 
 [node name="Flames" parent="." instance=ExtResource("2_tgysf")]
-position = Vector2(0, 600)
+position = Vector2(475, 259)
