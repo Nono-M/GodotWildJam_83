@@ -5,9 +5,12 @@
 [node name="FlamesBox" type="Node2D"]
 
 [node name="RedFlame" parent="." instance=ExtResource("1_8rsn0")]
+flame_color = "red"
 
 [node name="BlueFlame" parent="." instance=ExtResource("1_8rsn0")]
 position = Vector2(100, 0)
+flame_color = "blue"
 
 [node name="YellowFlame" parent="." instance=ExtResource("1_8rsn0")]
 position = Vector2(200, 0)
+flame_color = "yellow"

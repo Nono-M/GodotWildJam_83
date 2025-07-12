@@ -1,5 +1,7 @@
 extends Sprite2D
 
+@export var flame_color: String
+
 var is_dragging:bool = false
 var _duplicated_flame : Sprite2D
 var mouse_offset:Vector2
