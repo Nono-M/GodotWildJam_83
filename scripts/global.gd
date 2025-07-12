@@ -1,6 +1,23 @@
 extends Node
 
-func red_flame():
+var total_flames:int
+var red_counter_label:Node
+var blue_counter_label:Node
+var yellow_counter_label:Node
+
+func _ready() -> void:
+	red_counter_label = get_tree().root.get_node("Main/Flames/RedFlame/Counter")
+	blue_counter_label = get_tree().root.get_node("Main/Flames/BlueFlame/Counter")
+	yellow_counter_label = get_tree().root.get_node("Main/Flames/YellowFlame/Counter")
+
+func red_flame(letter):
+	print(letter.get_node("../Label").text)
+	letter.get_parent().queue_free()
+	var red_counter:int = red_counter_label.text.to_int() - 1
+	red_counter_label.text = "x %d" % red_counter
+	total_flames -= 1
+	if total_flames <= 0:
+		check_word()
 	pass
 
 
@@ -21,14 +38,11 @@ func load_word(keyword):
 		get_tree().root.get_node("Main/WordDisplayer").add_child(letter)
 
 
-
 func load_flames(red, blue, yellow):
-	var red_counter_label = get_tree().root.get_node("Main/Flames/RedFlame/Counter")
-	var blue_counter_label = get_tree().root.get_node("Main/Flames/BlueFlame/Counter")
-	var yellow_counter_label = get_tree().root.get_node("Main/Flames/YellowFlame/Counter")
 	red_counter_label.text = "x %d" % red
 	blue_counter_label.text = "x %d" % blue
 	yellow_counter_label.text = "x %d" % yellow
+	total_flames = red + blue + yellow
 	
 
 
@@ -41,4 +55,13 @@ func calculate_score():
 
 
 func timer():
+	pass
+
+
+func check_word():
+	print("word to be checked")
+	pass
+
+
+func game_over():
 	pass

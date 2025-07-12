@@ -10,4 +10,4 @@ script = ExtResource("1_ptgmp")
 metadata/_edit_use_anchors_ = true
 
 [node name="Flames" parent="." instance=ExtResource("2_tgysf")]
-position = Vector2(475, 259)
+position = Vector2(537, 624)
