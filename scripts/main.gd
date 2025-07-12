@@ -11,6 +11,7 @@ var _answers:Array = ["come","cone","cons"]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.load_word(_key_word)
+	Global.load_flames(_red_flames, _blue_flames, _yellow_flames)
 	print_tree_pretty()
 
 

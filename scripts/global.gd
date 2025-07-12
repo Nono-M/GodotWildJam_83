@@ -22,8 +22,14 @@ func load_word(keyword):
 
 
 
-func load_flames():
-	pass
+func load_flames(red, blue, yellow):
+	var red_counter_label = get_tree().root.get_node("Main/Flames/RedFlame/Counter")
+	var blue_counter_label = get_tree().root.get_node("Main/Flames/BlueFlame/Counter")
+	var yellow_counter_label = get_tree().root.get_node("Main/Flames/YellowFlame/Counter")
+	red_counter_label.text = "x %d" % red
+	blue_counter_label.text = "x %d" % blue
+	yellow_counter_label.text = "x %d" % yellow
+	
 
 
 func reset_puzzle():

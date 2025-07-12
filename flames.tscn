@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://0cyugpbhrcae"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jiepy"]
+size = Vector2(50, 50)
+
+[sub_resource type="LabelSettings" id="LabelSettings_weku2"]
+font_size = 25
+
+[node name="Flames" type="Node2D"]
+
+[node name="RedFlame" type="Sprite2D" parent="."]
+position = Vector2(40, 37)
+texture = SubResource("PlaceholderTexture2D_jiepy")
+
+[node name="Counter" type="Label" parent="RedFlame"]
+offset_left = -19.0
+offset_top = 26.0
+offset_right = 21.0
+offset_bottom = 49.0
+text = "x1"
+label_settings = SubResource("LabelSettings_weku2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BlueFlame" type="Sprite2D" parent="."]
+position = Vector2(130, 37)
+texture = SubResource("PlaceholderTexture2D_jiepy")
+
+[node name="Counter" type="Label" parent="BlueFlame"]
+offset_left = -19.0
+offset_top = 26.0
+offset_right = 21.0
+offset_bottom = 49.0
+text = "x1"
+label_settings = SubResource("LabelSettings_weku2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YellowFlame" type="Sprite2D" parent="."]
+position = Vector2(220, 37)
+texture = SubResource("PlaceholderTexture2D_jiepy")
+
+[node name="Counter" type="Label" parent="YellowFlame"]
+offset_left = -19.0
+offset_top = 26.0
+offset_right = 21.0
+offset_bottom = 49.0
+text = "x1"
+label_settings = SubResource("LabelSettings_weku2")
+horizontal_alignment = 1
+vertical_alignment = 1
