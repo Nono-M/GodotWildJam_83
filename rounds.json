@@ -1,0 +1,31 @@
+{
+  "round1" : {
+    "key_word" : "toto",
+    "red_flame":0,
+    "blue_flame":1,
+    "yellow_flame":0,
+    "answers":[
+      "otto"
+    ]
+  },
+  "round2" : {
+    "key_word" : "consume",
+    "red_flame":3,
+    "blue_flame":0,
+    "yellow_flame":0,
+    "answers":[
+      "come",
+      "cone",
+      "cons"
+    ]
+  },
+  "round3" : {
+    "key_word" : "green",
+    "red_flame":0,
+    "blue_flame":2,
+    "yellow_flame":0,
+    "answers":[
+      "genre"
+    ]
+  }
+}

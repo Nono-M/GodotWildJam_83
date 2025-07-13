@@ -4,6 +4,8 @@ var total_flames:int
 var red_counter_label:Node
 var blue_counter_label:Node
 var yellow_counter_label:Node
+var current_round:int = 1
+var rounds_dict:Dictionary
 
 func _ready() -> void:
 	red_counter_label = get_tree().root.get_node("Main/Flames/RedFlame/Counter")
@@ -55,6 +57,23 @@ func blue_flame(letter:Node, letter_flame:bool=false):
 
 func yellow_flame():
 	pass
+
+
+func load_json():
+	var name_string = FileAccess.get_file_as_string("res://rounds.json")
+	rounds_dict = JSON.parse_string(name_string)
+
+
+func load_round_data(round_number:int):
+	var round_data:Dictionary =  rounds_dict["round%d" % round_number]
+	Data._key_word = round_data["key_word"]
+	Data._blue_flames = round_data["blue_flame"]
+	Data._red_flames = round_data["red_flame"]
+	Data._yellow_flames = round_data["yellow_flame"]
+	Data._answers = round_data["answers"]
+	
+	load_word(Data._key_word)
+	load_flames(Data._red_flames,Data._blue_flames, Data._yellow_flames)
 
 
 func load_word(keyword):
