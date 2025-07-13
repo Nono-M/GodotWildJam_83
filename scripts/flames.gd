@@ -43,6 +43,7 @@ func duplicate_flame(node:Node) -> Node:
 	var rectangleshape2D = RectangleShape2D.new()
 	rectangleshape2D.size = Vector2(60,60)
 	collisionshape2D.shape = rectangleshape2D
+	area2d.position = Vector2(25,25)
 	area2d.add_child(collisionshape2D)
 	area2d.name = "CollisionDetector"
 	duplicated_flame.add_child(area2d)

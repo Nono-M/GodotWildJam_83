@@ -14,10 +14,21 @@ cache/0/60/0/descent = 0.0
 cache/0/60/0/underline_position = 0.0
 cache/0/60/0/underline_thickness = 0.0
 cache/0/60/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_yokvi"]
+line_spacing = 0.0
 font = SubResource("FontFile_71ccx")
-font_size = 60
+font_size = 50
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb3gm"]
 size = Vector2(60, 60)
@@ -27,26 +38,17 @@ custom_minimum_size = Vector2(60, 60)
 layout_mode = 3
 anchors_preset = 0
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(15, 0)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
+layout_mode = 1
 offset_right = 1.0
+text = "A"
 label_settings = SubResource("LabelSettings_yokvi")
 horizontal_alignment = 1
+vertical_alignment = 1
 uppercase = true
 
 [node name="Detector" type="Area2D" parent="."]
+position = Vector2(30, 30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
 shape = SubResource("RectangleShape2D_nb3gm")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(15, 0)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0

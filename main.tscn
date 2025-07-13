@@ -7,7 +7,22 @@
 script = ExtResource("1_ptgmp")
 
 [node name="WordDisplayer" type="HBoxContainer" parent="."]
+offset_top = 134.0
+offset_right = 1000.0
+offset_bottom = 434.0
 metadata/_edit_use_anchors_ = true
 
+[node name="ResultDisplayer" type="VBoxContainer" parent="."]
+offset_left = 1062.0
+offset_top = 119.0
+offset_right = 1262.0
+offset_bottom = 159.0
+
 [node name="Flames" parent="." instance=ExtResource("2_tgysf")]
-position = Vector2(537, 624)
+position = Vector2(34, 615)
+
+[node name="MessageBox" type="Label" parent="."]
+offset_left = 431.0
+offset_top = 596.0
+offset_right = 781.0
+offset_bottom = 716.0
