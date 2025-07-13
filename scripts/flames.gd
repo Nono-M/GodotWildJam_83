@@ -9,7 +9,7 @@ var delay:int = 3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if is_dragging == true:
+	if is_dragging == true and _duplicated_flame != null:
 		var tween = get_tree().create_tween().bind_node(_duplicated_flame)
 		tween.tween_property(_duplicated_flame, "global_position", get_global_mouse_position() - mouse_offset, delay * delta)
 	
@@ -35,18 +35,24 @@ func _input(event):
 
 
 func duplicate_flame(node:Node) -> Node:
-	var duplicated_flame = node.duplicate()
-	for child in duplicated_flame.get_children():
-		child.queue_free()
-	var area2d = Area2D.new()
-	var collisionshape2D = CollisionShape2D.new()
-	var rectangleshape2D = RectangleShape2D.new()
-	rectangleshape2D.size = Vector2(60,60)
-	collisionshape2D.shape = rectangleshape2D
-	area2d.position = Vector2(25,25)
-	area2d.add_child(collisionshape2D)
-	area2d.name = "CollisionDetector"
-	duplicated_flame.add_child(area2d)
-	duplicated_flame.position -= node.position
-	add_child(duplicated_flame)
-	return duplicated_flame
+	var number_flames = node.get_child(0).text.to_int()
+	
+	if number_flames > 0:
+		var duplicated_flame = node.duplicate()
+		
+		for child in duplicated_flame.get_children():
+			child.queue_free()
+		var area2d = Area2D.new()
+		var collisionshape2D = CollisionShape2D.new()
+		var rectangleshape2D = RectangleShape2D.new()
+		rectangleshape2D.size = Vector2(60,60)
+		collisionshape2D.shape = rectangleshape2D
+		area2d.position = Vector2(25,25)
+		area2d.add_child(collisionshape2D)
+		area2d.name = "CollisionDetector"
+		duplicated_flame.add_child(area2d)
+		duplicated_flame.position -= node.position
+		add_child(duplicated_flame)
+		return duplicated_flame
+	else:
+		return null

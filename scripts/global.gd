@@ -70,8 +70,8 @@ func check_word():
 	
 	var word_index:int = Data._answers.find(final_word)
 	if word_index == -1:
-		print("word not found")
-		display_message("Word not existant, try again")
+		print("'%s' word not found" % final_word.to_upper())
+		display_message("'%s' Word not existant, try again" % final_word.to_upper())
 		clear_word()
 		Global.load_word(Data._key_word)
 		Global.load_flames(Data._red_flames,Data._blue_flames, Data._yellow_flames)
@@ -88,7 +88,7 @@ func check_word():
 			clear_word()
 			Global.load_word(Data._key_word)
 			Global.load_flames(Data._red_flames,Data._blue_flames, Data._yellow_flames)
-			display_message("%d words to find" % Data._answers.size())
+			display_message("You found '%s', %d words to find" % [final_word.to_upper(),Data._answers.size()])
 		else:
 			display_message("Congratz you WON")
 
