@@ -1,6 +1,7 @@
 extends Sprite2D
 
 @export var flame_color: String
+@export var letter_flame: bool = false
 
 var is_dragging:bool = false
 var _duplicated_flame : Sprite2D
@@ -29,15 +30,21 @@ func _input(event):
 						if _duplicated_flame.get_node("CollisionDetector").has_overlapping_areas():
 							Global.red_flame(collided_letter[0])
 					"blue":
-						Global.blue_flame()
+						if _duplicated_flame.get_node("CollisionDetector").has_overlapping_areas():
+							Global.blue_flame(collided_letter[0], _duplicated_flame.letter_flame)
 				_duplicated_flame.queue_free()
 			is_dragging = false
 
 
 func duplicate_flame(node:Node) -> Node:
 	var number_flames = node.get_child(0).text.to_int()
-	
-	if number_flames > 0:
+	var letter_lit:bool = false
+	var word_displayer = get_tree().root.get_node("Main/WordDisplayer")
+	for child in word_displayer.get_children():
+		if child.has_node("./BlueFlame"):
+			letter_lit = true
+			break
+	if (number_flames > 0 and not letter_lit) or (letter_lit and node.letter_flame):
 		var duplicated_flame = node.duplicate()
 		
 		for child in duplicated_flame.get_children():
@@ -53,6 +60,7 @@ func duplicate_flame(node:Node) -> Node:
 		duplicated_flame.add_child(area2d)
 		duplicated_flame.position -= node.position
 		add_child(duplicated_flame)
+		#print(duplicated_flame.letter_flame)
 		return duplicated_flame
 	else:
 		return null
