@@ -65,15 +65,18 @@ func load_json():
 
 
 func load_round_data(round_number:int):
-	var round_data:Dictionary =  rounds_dict["round%d" % round_number]
-	Data._key_word = round_data["key_word"]
-	Data._blue_flames = round_data["blue_flame"]
-	Data._red_flames = round_data["red_flame"]
-	Data._yellow_flames = round_data["yellow_flame"]
-	Data._answers = round_data["answers"]
-	
-	load_word(Data._key_word)
-	load_flames(Data._red_flames,Data._blue_flames, Data._yellow_flames)
+	if round_number <= rounds_dict.size():
+		var round_data:Dictionary =  rounds_dict["round%d" % round_number]
+		Data._key_word = round_data["key_word"]
+		Data._blue_flames = round_data["blue_flame"]
+		Data._red_flames = round_data["red_flame"]
+		Data._yellow_flames = round_data["yellow_flame"]
+		Data._answers = round_data["answers"]
+		
+		load_word(Data._key_word)
+		load_flames(Data._red_flames,Data._blue_flames, Data._yellow_flames)
+	else:
+		display_message("You've finished the game, you're amazing")
 
 
 func load_word(keyword):
@@ -93,8 +96,10 @@ func load_flames(red, blue, yellow):
 	
 
 
-func reset_puzzle():
-	pass
+func reset_round():
+	clear_word()
+	load_word(Data._key_word)
+	load_flames(Data._red_flames,Data._blue_flames, Data._yellow_flames)
 
 
 func calculate_score():
@@ -137,6 +142,8 @@ func check_word():
 			display_message("You found '%s', %d words to find" % [final_word.to_upper(),Data._answers.size()])
 		else:
 			display_message("Congratz you WON")
+			current_round += 1
+			get_tree().root.get_node("Main/Interface/NextRoundButton").disabled = false
 
 
 func clear_word() -> bool:
