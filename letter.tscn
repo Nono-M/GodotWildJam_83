@@ -1,33 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://diefc30kf4s3j"]
 
-[sub_resource type="FontFile" id="FontFile_71ccx"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/60/0/ascent = 0.0
-cache/0/60/0/descent = 0.0
-cache/0/60/0/underline_position = 0.0
-cache/0/60/0/underline_thickness = 0.0
-cache/0/60/0/scale = 1.0
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/50/0/ascent = 0.0
-cache/0/50/0/descent = 0.0
-cache/0/50/0/underline_position = 0.0
-cache/0/50/0/underline_thickness = 0.0
-cache/0/50/0/scale = 1.0
+[ext_resource type="FontFile" uid="uid://dkgjvlcpb2eh" path="res://assets/SigmarOne-Regular.ttf" id="1_ccnf4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yokvi"]
 line_spacing = 0.0
-font = SubResource("FontFile_71ccx")
+font = ExtResource("1_ccnf4")
 font_size = 50
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb3gm"]
