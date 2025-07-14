@@ -1,13 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfymmbl53tptq"]
+[gd_scene load_steps=5 format=3 uid="uid://dfymmbl53tptq"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ptgmp"]
-[ext_resource type="PackedScene" uid="uid://cigcu50wbapym" path="res://interface.tscn" id="2_4v44y"]
+[ext_resource type="PackedScene" uid="uid://doidypiunpli3" path="res://interface.tscn" id="2_4v44y"]
 [ext_resource type="PackedScene" uid="uid://0cyugpbhrcae" path="res://flames_box.tscn" id="2_tgysf"]
 [ext_resource type="FontFile" uid="uid://dkgjvlcpb2eh" path="res://assets/SigmarOne-Regular.ttf" id="3_g2u06"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_fk52p"]
-font = ExtResource("3_g2u06")
-font_size = 24
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ptgmp")
@@ -35,3 +31,6 @@ offset_left = 514.0
 offset_top = 447.0
 offset_right = 1027.0
 offset_bottom = 634.0
+theme_override_fonts/font = ExtResource("3_g2u06")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2

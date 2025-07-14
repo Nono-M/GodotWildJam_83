@@ -130,6 +130,8 @@ func check_word():
 		var result_displayer = get_tree().root.get_node("Main/ResultDisplayer")
 		var new_result = Label.new()
 		new_result.text = final_word
+		var sigmarone_font = load("res://assets/SigmarOne-Regular.ttf")
+		new_result.add_theme_font_override("font", sigmarone_font)
 		new_result.uppercase = true
 		result_displayer.add_child(new_result)
 		
