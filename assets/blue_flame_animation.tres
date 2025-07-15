@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://hfl1s4g332gu"]
+
+[ext_resource type="Texture2D" uid="uid://cfwutp7c0qewa" path="res://assets/blue_flame.png" id="1_sbbjn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbw8s"]
+atlas = ExtResource("1_sbbjn")
+region = Rect2(200, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf7mo"]
+atlas = ExtResource("1_sbbjn")
+region = Rect2(250, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upkjl"]
+atlas = ExtResource("1_sbbjn")
+region = Rect2(300, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3v61"]
+atlas = ExtResource("1_sbbjn")
+region = Rect2(0, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci7tv"]
+atlas = ExtResource("1_sbbjn")
+region = Rect2(50, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgxbj"]
+atlas = ExtResource("1_sbbjn")
+region = Rect2(100, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6frpp"]
+atlas = ExtResource("1_sbbjn")
+region = Rect2(150, 0, 50, 60)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbw8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xf7mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upkjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3v61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci7tv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgxbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6frpp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]

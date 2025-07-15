@@ -11,11 +11,12 @@ script = ExtResource("1_ptgmp")
 [node name="Interface" parent="." instance=ExtResource("2_4v44y")]
 
 [node name="WordDisplayer" type="HBoxContainer" parent="."]
-offset_left = 32.0
-offset_top = 66.0
-offset_right = 1032.0
-offset_bottom = 366.0
-metadata/_edit_use_anchors_ = true
+offset_left = 33.0
+offset_top = 68.0
+offset_right = 1033.0
+offset_bottom = 368.0
+pivot_offset = Vector2(50, 50)
+theme_override_constants/separation = 20
 
 [node name="ResultDisplayer" type="VBoxContainer" parent="."]
 offset_left = 1061.0

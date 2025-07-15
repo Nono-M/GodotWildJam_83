@@ -1,10 +1,10 @@
-extends Sprite2D
+extends AnimatedSprite2D
 
 @export var flame_color: String
 @export var letter_flame: bool = false
 
 var is_dragging:bool = false
-var _duplicated_flame : Sprite2D
+var _duplicated_flame : AnimatedSprite2D
 var mouse_offset:Vector2
 var delay:int = 3
 
@@ -18,7 +18,12 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			if get_rect().has_point(to_local(event.position)):
+			var size = sprite_frames.get_frame_texture(animation, frame).get_size()
+			var pos = offset
+			if centered:
+				pos -= 0.5 * size
+			var myrect =  Rect2(pos, size)
+			if myrect.has_point(to_local(event.position)):
 				_duplicated_flame = duplicate_flame(self)
 				is_dragging = true
 				mouse_offset = get_global_mouse_position() - global_position

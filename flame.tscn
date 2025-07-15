@@ -1,17 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://vf72lmhx3ytv"]
 
 [ext_resource type="Script" path="res://scripts/flames.gd" id="1_7igc5"]
+[ext_resource type="SpriteFrames" uid="uid://hfl1s4g332gu" path="res://assets/blue_flame_animation.tres" id="1_cijvv"]
 [ext_resource type="FontFile" uid="uid://dkgjvlcpb2eh" path="res://assets/SigmarOne-Regular.ttf" id="2_onhsf"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jiepy"]
-size = Vector2(50, 50)
 
 [sub_resource type="LabelSettings" id="LabelSettings_weku2"]
 font = ExtResource("2_onhsf")
 font_size = 25
 
-[node name="Flame" type="Sprite2D"]
-texture = SubResource("PlaceholderTexture2D_jiepy")
+[node name="Flame" type="AnimatedSprite2D"]
+scale = Vector2(1.5, 1.5)
+sprite_frames = ExtResource("1_cijvv")
+autoplay = "default"
+frame_progress = 0.276847
 centered = false
 script = ExtResource("1_7igc5")
 

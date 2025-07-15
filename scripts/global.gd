@@ -93,7 +93,6 @@ func load_flames(red, blue, yellow):
 	blue_counter_label.text = "x %d" % blue
 	yellow_counter_label.text = "x %d" % yellow
 	total_flames = red + blue + yellow
-	
 
 
 func reset_round():

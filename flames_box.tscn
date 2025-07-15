@@ -1,16 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://0cyugpbhrcae"]
+[gd_scene load_steps=3 format=3 uid="uid://0cyugpbhrcae"]
 
 [ext_resource type="PackedScene" uid="uid://vf72lmhx3ytv" path="res://flame.tscn" id="1_8rsn0"]
+[ext_resource type="SpriteFrames" uid="uid://bq63whh17opll" path="res://assets/red_flame_animation.tres" id="2_thapd"]
 
 [node name="FlamesBox" type="Node2D"]
 
 [node name="RedFlame" parent="." instance=ExtResource("1_8rsn0")]
+sprite_frames = ExtResource("2_thapd")
+frame_progress = 0.0
 flame_color = "red"
 
 [node name="BlueFlame" parent="." instance=ExtResource("1_8rsn0")]
 position = Vector2(100, 0)
+frame_progress = 0.0
 flame_color = "blue"
 
 [node name="YellowFlame" parent="." instance=ExtResource("1_8rsn0")]
+visible = false
 position = Vector2(200, 0)
 flame_color = "yellow"
