@@ -44,9 +44,9 @@ theme_override_styles/panel = ExtResource("1_2e0uu")
 
 [node name="FoundWordsPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 1060.0
+offset_left = 1055.0
 offset_top = 65.0
-offset_right = 1260.0
+offset_right = 1255.0
 offset_bottom = 365.0
 theme_override_styles/panel = ExtResource("1_2e0uu")
 

@@ -5,7 +5,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_yokvi"]
 line_spacing = 0.0
 font = ExtResource("1_ccnf4")
-font_size = 50
+font_size = 80
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb3gm"]
 size = Vector2(60, 60)

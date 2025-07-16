@@ -11,7 +11,7 @@ frame_progress = 0.0
 flame_color = "red"
 
 [node name="BlueFlame" parent="." instance=ExtResource("1_8rsn0")]
-position = Vector2(100, 0)
+position = Vector2(165, 0)
 frame_progress = 0.0
 flame_color = "blue"
 
