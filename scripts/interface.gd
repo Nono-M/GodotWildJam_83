@@ -12,5 +12,6 @@ func _on_reset_round_button_pressed():
 
 func _on_next_round_button_pressed():
 	$NextRoundButton.disabled = true
+	Global.display_message(" ")
 	Global.clear_word()
 	Global.load_round_data(Global.current_round)

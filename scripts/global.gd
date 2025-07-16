@@ -76,7 +76,7 @@ func load_round_data(round_number:int):
 		load_word(Data._key_word)
 		load_flames(Data._red_flames,Data._blue_flames, Data._yellow_flames)
 	else:
-		display_message("You've finished the game, you're amazing")
+		display_message("You've finished the game\n You're AMAZING")
 
 
 func load_word(keyword):
@@ -121,7 +121,7 @@ func check_word():
 	var word_index:int = Data._answers.find(final_word)
 	if word_index == -1:
 		#print("'%s' word not found" % final_word.to_upper())
-		display_message("'%s' Word not existant, try again" % final_word.to_upper())
+		display_message("'%s' Word not existant\n try again" % final_word.to_upper())
 		clear_word()
 		Global.load_word(Data._key_word)
 		Global.load_flames(Data._red_flames,Data._blue_flames, Data._yellow_flames)
@@ -140,9 +140,9 @@ func check_word():
 			clear_word()
 			Global.load_word(Data._key_word)
 			Global.load_flames(Data._red_flames,Data._blue_flames, Data._yellow_flames)
-			display_message("You found '%s', %d words to find" % [final_word.to_upper(),Data._answers.size()])
+			display_message("You found '%s'\n %d words to find" % [final_word.to_upper(),Data._answers.size()])
 		else:
-			display_message("Congratz you WON")
+			display_message("Round is over, congratz ! \nClick on the button to go to next round")
 			current_round += 1
 			get_tree().root.get_node("Main/Interface/NextRoundButton").disabled = false
 
