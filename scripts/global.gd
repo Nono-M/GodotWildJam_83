@@ -6,11 +6,12 @@ var blue_counter_label:Node
 var yellow_counter_label:Node
 var current_round:int = 1
 var rounds_dict:Dictionary
+var letter_lit:bool = false
 
 func _ready() -> void:
-	red_counter_label = get_tree().root.get_node("Main/Flames/RedFlame/Counter")
-	blue_counter_label = get_tree().root.get_node("Main/Flames/BlueFlame/Counter")
-	yellow_counter_label = get_tree().root.get_node("Main/Flames/YellowFlame/Counter")
+	red_counter_label = get_tree().root.get_node("Main/FlamesBox/RedFlame/Counter")
+	blue_counter_label = get_tree().root.get_node("Main/FlamesBox/BlueFlame/Counter")
+	yellow_counter_label = get_tree().root.get_node("Main/FlamesBox/YellowFlame/Counter")
 
 func red_flame(letter):
 	#print(letter.get_parent())
@@ -31,8 +32,9 @@ func blue_flame(letter:Node, letter_flame:bool=false):
 	blue_flame_instance.name = "BlueFlame"
 	blue_flame_instance.get_node("Counter").text = "1"
 	blue_flame_instance.get_node("Counter").visible = false
-	blue_flame_instance.position = Vector2(0, -60)
+	blue_flame_instance.position = Vector2(35, -20)
 	letter_to_lit.add_child(blue_flame_instance)
+	letter_lit = true
 	
 	#print("blue flame function : %s" % letter_flame)
 	if letter_flame:
@@ -49,6 +51,8 @@ func blue_flame(letter:Node, letter_flame:bool=false):
 				word_displayer.move_child(child, pos_A)
 				letter_to_lit.get_node("BlueFlame").queue_free()
 				child.get_node("BlueFlame").queue_free()
+				letter_lit = false
+				get_tree().root.get_node("Main/FlamesBox").modulate = Color(1.0, 1.0, 1.0, 1.0)
 				#print("switch letter : %s" % child.get_node("Label").text)
 				
 	if total_flames <= 0 :
@@ -99,6 +103,8 @@ func reset_round():
 	clear_word()
 	load_word(Data._key_word)
 	load_flames(Data._red_flames,Data._blue_flames, Data._yellow_flames)
+	get_tree().root.get_node("Main/FlamesBox").modulate = Color(1.0, 1.0, 1.0, 1.0)
+	letter_lit = false
 
 
 func calculate_score():
@@ -129,8 +135,6 @@ func check_word():
 		var result_displayer = get_tree().root.get_node("Main/ResultDisplayer")
 		var new_result = Label.new()
 		new_result.text = final_word
-		var sigmarone_font = load("res://assets/SigmarOne-Regular.ttf")
-		new_result.add_theme_font_override("font", sigmarone_font)
 		new_result.uppercase = true
 		result_displayer.add_child(new_result)
 		

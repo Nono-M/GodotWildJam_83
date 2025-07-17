@@ -13,14 +13,14 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = ExtResource("1_cijvv")
 autoplay = "default"
 frame_progress = 0.276847
-centered = false
 script = ExtResource("1_7igc5")
 
 [node name="Counter" type="Label" parent="."]
 custom_minimum_size = Vector2(50, 0)
-offset_top = 50.0
-offset_right = 50.0
-offset_bottom = 85.0
+offset_left = -26.0
+offset_top = 27.3333
+offset_right = 24.0
+offset_bottom = 69.3333
 text = "x1"
 label_settings = SubResource("LabelSettings_weku2")
 horizontal_alignment = 1

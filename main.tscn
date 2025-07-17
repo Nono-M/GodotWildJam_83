@@ -25,8 +25,8 @@ offset_top = 76.0
 offset_right = 1207.0
 offset_bottom = 116.0
 
-[node name="Flames" parent="." instance=ExtResource("2_tgysf")]
-position = Vector2(116, 474)
+[node name="FlamesBox" parent="." instance=ExtResource("2_tgysf")]
+position = Vector2(156, 513)
 
 [node name="MessageBox" type="Label" parent="."]
 offset_left = 543.0
