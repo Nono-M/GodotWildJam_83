@@ -1,14 +1,32 @@
 {
-  "round1" : {
-    "key_word" : "toto",
+  "round8" : {
+    "key_word" : "burn",
+    "red_flame":1,
+    "blue_flame":0,
+    "yellow_flame":0,
+    "answers":[
+      "bun"
+    ]
+  },
+  "round2" : {
+    "key_word" : "game",
     "red_flame":0,
     "blue_flame":1,
     "yellow_flame":0,
     "answers":[
-      "otto"
+      "mage"
     ]
   },
-  "round2" : {
+  "round3" : {
+    "key_word" : "green",
+    "red_flame":0,
+    "blue_flame":2,
+    "yellow_flame":0,
+    "answers":[
+      "genre"
+    ]
+  },
+  "round4" : {
     "key_word" : "consume",
     "red_flame":3,
     "blue_flame":0,
@@ -19,13 +37,22 @@
       "cons"
     ]
   },
-  "round3" : {
-    "key_word" : "green",
-    "red_flame":0,
-    "blue_flame":2,
+  "round5" : {
+    "key_word" : "godot",
+    "red_flame":1,
+    "blue_flame":1,
     "yellow_flame":0,
     "answers":[
-      "genre"
+      "good"
+    ]
+  },
+  "round1" : {
+    "key_word" : "entropy",
+    "red_flame":1,
+    "blue_flame":3,
+    "yellow_flame":0,
+    "answers":[
+      "poetry"
     ]
   }
 }
