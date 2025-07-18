@@ -1,5 +1,5 @@
 {
-  "round8" : {
+  "round1" : {
     "key_word" : "burn",
     "red_flame":1,
     "blue_flame":0,
@@ -46,13 +46,40 @@
       "good"
     ]
   },
-  "round1" : {
+  "round6" : {
     "key_word" : "entropy",
     "red_flame":1,
     "blue_flame":3,
     "yellow_flame":0,
     "answers":[
       "poetry"
+    ]
+  },
+  "round7" : {
+    "key_word" : "battery",
+    "red_flame":1,
+    "blue_flame":2,
+    "yellow_flame":0,
+    "answers":[
+      "batter",
+      "betray",
+      "bratty"
+    ]
+  },
+  "round8" : {
+    "key_word" : "browser",
+    "red_flame":2,
+    "blue_flame":2,
+    "yellow_flame":0,
+    "answers":[
+      "bores",
+      "bower",
+      "brews",
+      "brows",
+      "sober",
+      "robes",
+      "swore",
+      "worse"
     ]
   }
 }
