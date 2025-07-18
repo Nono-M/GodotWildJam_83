@@ -74,7 +74,7 @@ func load_round_data(round_number:int):
 		Data._red_flames = round_data["red_flame"]
 		Data._yellow_flames = round_data["yellow_flame"]
 		Data._answers = round_data["answers"]
-		
+		clear_result_displayer()
 		load_word(Data._key_word)
 		load_flames(Data._red_flames,Data._blue_flames, Data._yellow_flames)
 	else:
@@ -157,6 +157,13 @@ func clear_word() -> bool:
 		return true
 	else:
 		return false
+
+
+func clear_result_displayer():
+	var result_displayer = get_tree().root.get_node("Main/ResultDisplayer")
+	for child in result_displayer.get_children():
+		child.queue_free()
+
 
 func display_message(message:String) -> void:
 	var message_box = get_tree().root.get_node("Main/MessageBox")
