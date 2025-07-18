@@ -29,7 +29,8 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Detector" type="Area2D" parent="."]
-position = Vector2(30, 30)
+position = Vector2(30, 60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+position = Vector2(6, 5)
 shape = SubResource("RectangleShape2D_nb3gm")

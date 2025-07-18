@@ -26,34 +26,32 @@ func red_flame(letter):
 
 func blue_flame(letter:Node, letter_flame:bool=false):
 	var letter_to_lit:Node = letter.get_parent()
-	var blue_flame_instance = load("res://flame.tscn").instantiate()
-	blue_flame_instance.flame_color = "blue"
-	blue_flame_instance.letter_flame = true
-	blue_flame_instance.name = "BlueFlame"
-	blue_flame_instance.get_node("Counter").text = "1"
-	blue_flame_instance.get_node("Counter").visible = false
-	blue_flame_instance.position = Vector2(35, -20)
-	letter_to_lit.add_child(blue_flame_instance)
-	letter_lit = true
-	
 	#print("blue flame function : %s" % letter_flame)
 	if letter_flame:
-		total_flames -= 1
-		var blue_counter:int = blue_counter_label.text.to_int() - 1	
-		blue_counter_label.text = "x %d" % blue_counter
 		var word_displayer = get_tree().root.get_node("Main/WordDisplayer")
 		for child in word_displayer.get_children():
-			if child.has_node("./BlueFlame"):
-				#print(letter_to_lit.get_path())
+			if child.has_node("./BlueFlame") and child != letter_to_lit:
 				var pos_A = letter_to_lit.get_index()
 				var pos_B = child.get_index()
 				word_displayer.move_child(letter_to_lit, pos_B)
 				word_displayer.move_child(child, pos_A)
-				letter_to_lit.get_node("BlueFlame").queue_free()
+				#letter_to_lit.get_node("BlueFlame").queue_free()
 				child.get_node("BlueFlame").queue_free()
 				letter_lit = false
 				get_tree().root.get_node("Main/FlamesBox").modulate = Color(1.0, 1.0, 1.0, 1.0)
-				#print("switch letter : %s" % child.get_node("Label").text)
+				total_flames -= 1
+				var blue_counter:int = blue_counter_label.text.to_int() - 1	
+				blue_counter_label.text = "x %d" % blue_counter
+	else :
+		var blue_flame_instance = load("res://flame.tscn").instantiate()
+		blue_flame_instance.flame_color = "blue"
+		blue_flame_instance.letter_flame = true
+		blue_flame_instance.name = "BlueFlame"
+		blue_flame_instance.get_node("Counter").text = "1"
+		blue_flame_instance.get_node("Counter").visible = false
+		blue_flame_instance.position = Vector2(35, -20)
+		letter_to_lit.add_child(blue_flame_instance)
+		letter_lit = true
 				
 	if total_flames <= 0 :
 		check_word()
