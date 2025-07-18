@@ -8,6 +8,13 @@ var _duplicated_flame : AnimatedSprite2D
 var mouse_offset:Vector2
 var delay:int = 3
 
+func _ready():
+	match flame_color :
+		"red":
+			$Light.color = Color("a46a04")
+		"blue":
+			$Light.color = Color("2868ff")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if is_dragging == true and _duplicated_flame != null:
@@ -51,7 +58,8 @@ func duplicate_flame(node:Node) -> Node:
 	if (number_flames > 0 and not Global.letter_lit) or (Global.letter_lit and node.letter_flame):
 		var duplicated_flame = node.duplicate()
 		for child in duplicated_flame.get_children():
-			child.queue_free()
+			if child.is_class("Label"):
+				child.queue_free()
 		var area2d = Area2D.new()
 		var collisionshape2D = CollisionShape2D.new()
 		var rectangleshape2D = RectangleShape2D.new()

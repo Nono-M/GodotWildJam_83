@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://vf72lmhx3ytv"]
+[gd_scene load_steps=7 format=3 uid="uid://vf72lmhx3ytv"]
 
 [ext_resource type="Script" path="res://scripts/flames.gd" id="1_7igc5"]
 [ext_resource type="SpriteFrames" uid="uid://hfl1s4g332gu" path="res://assets/blue_flame_animation.tres" id="1_cijvv"]
@@ -8,7 +8,17 @@
 font = ExtResource("2_onhsf")
 font_size = 25
 
+[sub_resource type="Gradient" id="Gradient_4dnx5"]
+offsets = PackedFloat32Array(0, 0.348525, 0.758713)
+colors = PackedColorArray(1, 1, 1, 1, 0.519435, 0.519435, 0.519435, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pdh5m"]
+gradient = SubResource("Gradient_4dnx5")
+fill = 1
+fill_from = Vector2(0.529915, 0.447293)
+
 [node name="Flame" type="AnimatedSprite2D"]
+light_mask = 2
 scale = Vector2(1.5, 1.5)
 sprite_frames = ExtResource("1_cijvv")
 autoplay = "default"
@@ -25,3 +35,10 @@ text = "x1"
 label_settings = SubResource("LabelSettings_weku2")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(-2, 8.08334)
+scale = Vector2(1.09896, 1.23177)
+color = Color(0.642462, 0.41725, 0.0156542, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_pdh5m")
