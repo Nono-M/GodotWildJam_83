@@ -19,3 +19,11 @@ func _on_next_round_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+
+func _on_texture_button_pressed():
+	$HelpContainer.visible = false
+
+
+func _on_help_button_pressed():
+	$HelpContainer.visible = true

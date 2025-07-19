@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqdrd3n4sctvu"]
+
+[ext_resource type="Texture2D" uid="uid://d26niol4iv3d5" path="res://assets/button_quit.png" id="1_kpxol"]
+[ext_resource type="Texture2D" uid="uid://mgp0uwnrvh3o" path="res://assets/button_hover_quit.png" id="2_xahdb"]
+
+[node name="HelpContainer" type="PanelContainer"]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="HelpBackground" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 0.788235)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 300
+
+[node name="Help" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Welcome to [img=300]res://assets/title.png[/img]
+
+This is my submission for Godot Wild Jam #83 on the theme:
+[center][img=300]res://assets/GWJ-83-Consume.png[/img][/center]
+
+The goal of this game is to get throught the rounds by solving the word puzzles using all the flames at your disposal to form new words.
+
+Two different kind of flames will help you :
+* [color=red]Red Flame[/color] : it burns letters to remove them
+* [color=blue]Blue Flame[/color] : Mark a letter with  a blue flame that will appear above it. Drag that flame to another letter to sap their places
+
+All flames must be used to check for a word.
+All the possibilities have to be found to advance to the next round,
+There's a total of 8 rounds with increasing difficulty
+
+[center]GOOD LUCK AND ENJOY  ![/center]"
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("1_kpxol")
+texture_hover = ExtResource("2_xahdb")
