@@ -28,3 +28,7 @@ window/size/viewport_height=720
 [gui]
 
 theme/custom_font="res://assets/SigmarOne-Regular.ttf"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
