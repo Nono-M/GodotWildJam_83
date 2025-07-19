@@ -82,10 +82,11 @@ text = "Help"
 
 [node name="QuitButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1165.0
+offset_left = 1198.0
 offset_top = 33.0
-offset_right = 1255.0
+offset_right = 1288.0
 offset_bottom = 123.0
+scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("5_e55gs")
 texture_hover = ExtResource("6_sekti")
 

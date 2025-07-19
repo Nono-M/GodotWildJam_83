@@ -39,6 +39,7 @@ theme_override_font_sizes/font_size = 24
 autowrap_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 4
 position = Vector2(534, 74)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_unr4y")

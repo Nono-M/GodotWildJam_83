@@ -8,11 +8,6 @@ var current_round:int = 1
 var rounds_dict:Dictionary
 var letter_lit:bool = false
 
-func _ready() -> void:
-	red_counter_label = get_tree().root.get_node("Main/FlamesBox/RedFlame/Counter")
-	blue_counter_label = get_tree().root.get_node("Main/FlamesBox/BlueFlame/Counter")
-	yellow_counter_label = get_tree().root.get_node("Main/FlamesBox/YellowFlame/Counter")
-
 func red_flame(letter):
 	#print(letter.get_parent())
 	await burn_letter_animation(letter.get_parent())
