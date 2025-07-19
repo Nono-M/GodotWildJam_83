@@ -20,17 +20,25 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 1
-offset_right = 1.0
+anchors_preset = -1
+offset_right = 80.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "A"
 label_settings = SubResource("LabelSettings_yokvi")
 horizontal_alignment = 1
 vertical_alignment = 1
-uppercase = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Label"]
+position = Vector2(40, 66)
+scale = Vector2(1, -1)
 
 [node name="Detector" type="Area2D" parent="."]
 position = Vector2(30, 60)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
-position = Vector2(6, 5)
+position = Vector2(10, 5)
 shape = SubResource("RectangleShape2D_nb3gm")

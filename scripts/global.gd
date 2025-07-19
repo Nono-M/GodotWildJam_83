@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func red_flame(letter):
 	#print(letter.get_parent())
+	await burn_letter_animation(letter.get_parent())
 	letter.get_parent().queue_free()
 	await letter.get_parent().tree_exited
 	var red_counter:int = red_counter_label.text.to_int() - 1
@@ -57,6 +58,20 @@ func blue_flame(letter:Node, letter_flame:bool=false):
 		check_word()
 
 
+
+func burn_letter_animation(letter:Node):
+	var letter_mesh = letter.get_node("Label/MeshInstance2D")
+	var letter_label = letter.get_node("Label")
+	var mesh_template = load("res://assets/letter_mesh.tres")
+	var burn_material = load("res://styles/burning_letter_material.tres")
+	letter_mesh.mesh = mesh_template
+	letter_mesh.mesh.text = letter_label.text
+	letter_mesh.material = burn_material
+	letter_label.self_modulate = Color(1,1,1,0)
+	var burn_tween = get_tree().create_tween().bind_node(letter)
+	await burn_tween.tween_property(letter_mesh,"material:shader_parameter/burn",1.0, 1.0).finished
+
+
 func yellow_flame():
 	pass
 
@@ -86,6 +101,8 @@ func load_word(keyword):
 	for character:int in keyword.length():
 		var letter = letter_scene.instantiate()
 		letter.get_node("Label").text = keyword[character]
+		#letter.get_node("Label/MeshInstance2D").mesh.text = letter.get_node("Label").text
+		#print(letter.get_node("Label/MeshInstance2D").mesh.text)
 		letter.name = "Letter%d" % character
 		get_tree().root.get_node("Main/WordDisplayer").add_child(letter)
 

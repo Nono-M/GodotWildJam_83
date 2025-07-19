@@ -11,6 +11,6 @@ noise = SubResource("FastNoiseLite_7w34r")
 
 [resource]
 shader = ExtResource("1_0pn5f")
-shader_parameter/burn = 0.1
+shader_parameter/burn = 0.0
 shader_parameter/noise = SubResource("NoiseTexture2D_x7d1n")
 shader_parameter/gradient = ExtResource("2_ht5lu")

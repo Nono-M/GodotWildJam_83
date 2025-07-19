@@ -1,0 +1,9 @@
+[gd_resource type="TextMesh" load_steps=2 format=3 uid="uid://dkjtinfq1obno"]
+
+[ext_resource type="FontFile" uid="uid://dkgjvlcpb2eh" path="res://assets/SigmarOne-Regular.ttf" id="1_j6lct"]
+
+[resource]
+flip_faces = true
+font = ExtResource("1_j6lct")
+font_size = 80
+pixel_size = 1.0

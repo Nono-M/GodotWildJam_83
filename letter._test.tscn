@@ -1,46 +1,51 @@
-[gd_scene load_steps=6 format=3 uid="uid://b583tesqq45he"]
+[gd_scene load_steps=7 format=3 uid="uid://b583tesqq45he"]
 
 [ext_resource type="FontFile" uid="uid://dkgjvlcpb2eh" path="res://assets/SigmarOne-Regular.ttf" id="1_3h4et"]
 [ext_resource type="Script" path="res://letter._test.gd" id="1_34nwr"]
 [ext_resource type="Material" uid="uid://bbtxonoheqt85" path="res://styles/burning_letter_material.tres" id="3_iv1d6"]
 
-[sub_resource type="TextMesh" id="TextMesh_se2oq"]
-flip_faces = true
-text = "M"
+[sub_resource type="LabelSettings" id="LabelSettings_ksa4n"]
 font = ExtResource("1_3h4et")
 font_size = 80
-uppercase = true
+font_color = Color(0.188235, 1, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_se2oq"]
+flip_faces = true
+text = "t"
+font = ExtResource("1_3h4et")
+font_size = 80
 pixel_size = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb3gm"]
 size = Vector2(60, 60)
 
-[node name="Letter" type="Control"]
-custom_minimum_size = Vector2(60, 60)
+[node name="LetterTest" type="Control"]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 60.0
-offset_bottom = 60.0
-size_flags_horizontal = 3
+offset_right = 80.0
+offset_bottom = 80.0
 size_flags_vertical = 3
 script = ExtResource("1_34nwr")
 
 [node name="Label" type="Label" parent="."]
-layout_direction = 1
-layout_mode = 0
-offset_left = 259.0
-offset_top = 59.0
-offset_right = 340.0
-offset_bottom = 191.0
-theme_override_font_sizes/font_size = 80
-text = "M"
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 246.0
+offset_top = 151.0
+offset_right = 304.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "t"
+label_settings = SubResource("LabelSettings_ksa4n")
 horizontal_alignment = 1
 vertical_alignment = 1
-uppercase = true
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Label"]
 material = ExtResource("3_iv1d6")
-position = Vector2(37, 27)
+position = Vector2(40, 66)
 scale = Vector2(1, -1)
 mesh = SubResource("TextMesh_se2oq")
 
