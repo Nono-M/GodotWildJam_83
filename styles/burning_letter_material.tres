@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bbtxonoheqt85"]
+
+[ext_resource type="Shader" path="res://assets/burning_paper.gdshader" id="1_0pn5f"]
+[ext_resource type="Texture2D" uid="uid://s0stb8nhf0dd" path="res://styles/burning_letter_gradient.tres" id="2_ht5lu"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7w34r"]
+frequency = 0.0034
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x7d1n"]
+noise = SubResource("FastNoiseLite_7w34r")
+
+[resource]
+shader = ExtResource("1_0pn5f")
+shader_parameter/burn = 0.1
+shader_parameter/noise = SubResource("NoiseTexture2D_x7d1n")
+shader_parameter/gradient = ExtResource("2_ht5lu")
