@@ -34,8 +34,12 @@ func blue_flame(letter:Node, letter_flame:bool=false):
 			if child.has_node("./BlueFlame") and child != letter_to_lit:
 				var pos_A = letter_to_lit.get_index()
 				var pos_B = child.get_index()
+				burn_letter_animation(letter_to_lit)
+				await burn_letter_animation(child)
 				word_displayer.move_child(letter_to_lit, pos_B)
 				word_displayer.move_child(child, pos_A)
+				burn_letter_animation_inverted(letter_to_lit)
+				await burn_letter_animation_inverted(child)
 				#letter_to_lit.get_node("BlueFlame").queue_free()
 				child.get_node("BlueFlame").queue_free()
 				letter_lit = false
@@ -64,12 +68,28 @@ func burn_letter_animation(letter:Node):
 	var letter_label = letter.get_node("Label")
 	var mesh_template = load("res://assets/letter_mesh.tres")
 	var burn_material = load("res://styles/burning_letter_material.tres")
-	letter_mesh.mesh = mesh_template
+	letter_mesh.mesh = mesh_template.duplicate()
 	letter_mesh.mesh.text = letter_label.text
 	letter_mesh.material = burn_material
 	letter_label.self_modulate = Color(1,1,1,0)
 	var burn_tween = get_tree().create_tween().bind_node(letter)
 	await burn_tween.tween_property(letter_mesh,"material:shader_parameter/burn",1.0, 1.0).finished
+
+
+func burn_letter_animation_inverted(letter:Node):
+	var letter_mesh:MeshInstance2D = letter.get_node("Label/MeshInstance2D")
+	var letter_label:Label = letter.get_node("Label")
+	var mesh_template:TextMesh = load("res://assets/letter_mesh.tres")
+	var burn_material:Material = load("res://styles/burning_letter_material.tres")
+	letter_mesh.mesh = mesh_template.duplicate()
+	letter_mesh.mesh.text = letter_label.text
+	letter_mesh.material = burn_material.duplicate()
+	letter_label.self_modulate = Color(1,1,1,0)
+	letter_mesh.material.set_shader_parameter("burn", 1.0)
+	var burn_tween = get_tree().create_tween().bind_node(letter)
+	await burn_tween.tween_property(letter_mesh,"material:shader_parameter/burn",0.0, 1.0).finished
+	burn_tween.kill()
+	letter_label.self_modulate = Color(1,1,1,1)
 
 
 func yellow_flame():
