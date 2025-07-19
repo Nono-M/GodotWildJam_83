@@ -12,27 +12,27 @@ script = ExtResource("1_ptgmp")
 metadata/_edit_lock_ = true
 
 [node name="WordDisplayer" type="HBoxContainer" parent="."]
-offset_left = 105.0
-offset_top = 152.0
-offset_right = 967.0
-offset_bottom = 280.0
+offset_left = 106.0
+offset_top = 249.0
+offset_right = 968.0
+offset_bottom = 377.0
 pivot_offset = Vector2(50, 50)
 theme_override_constants/separation = 20
 
 [node name="ResultDisplayer" type="VBoxContainer" parent="."]
-offset_left = 1094.0
-offset_top = 76.0
-offset_right = 1207.0
-offset_bottom = 116.0
+offset_left = 1096.0
+offset_top = 180.0
+offset_right = 1209.0
+offset_bottom = 220.0
 
 [node name="FlamesBox" parent="." instance=ExtResource("2_tgysf")]
-position = Vector2(156, 513)
+position = Vector2(155, 564)
 
 [node name="MessageBox" type="Label" parent="."]
 offset_left = 543.0
-offset_top = 454.0
+offset_top = 506.0
 offset_right = 997.0
-offset_bottom = 624.0
+offset_bottom = 676.0
 theme_override_fonts/font = ExtResource("3_g2u06")
 theme_override_font_sizes/font_size = 24
 autowrap_mode = 2

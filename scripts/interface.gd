@@ -15,3 +15,7 @@ func _on_next_round_button_pressed():
 	Global.display_message(" ")
 	Global.clear_word()
 	Global.load_round_data(Global.current_round)
+
+
+func _on_quit_button_pressed():
+	get_tree().quit()

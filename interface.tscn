@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://doidypiunpli3"]
+[gd_scene load_steps=7 format=3 uid="uid://doidypiunpli3"]
 
 [ext_resource type="StyleBox" uid="uid://chg25468grsuo" path="res://styles/panel_styles.tres" id="1_2e0uu"]
 [ext_resource type="Script" path="res://scripts/interface.gd" id="1_tpu5y"]
 [ext_resource type="Texture2D" uid="uid://dvfhk4120augt" path="res://assets/background_ui.png" id="2_kwj6f"]
 [ext_resource type="FontFile" uid="uid://dkgjvlcpb2eh" path="res://assets/SigmarOne-Regular.ttf" id="3_hp27r"]
+[ext_resource type="Texture2D" uid="uid://d26niol4iv3d5" path="res://assets/button_quit.png" id="5_e55gs"]
+[ext_resource type="Texture2D" uid="uid://mgp0uwnrvh3o" path="res://assets/button_hover_quit.png" id="6_sekti"]
 
 [node name="Interface" type="Control"]
 layout_mode = 3
@@ -21,41 +23,41 @@ centered = false
 [node name="MainPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 31.0
-offset_top = 65.0
+offset_top = 166.0
 offset_right = 1031.0
-offset_bottom = 365.0
+offset_bottom = 466.0
 theme_override_styles/panel = ExtResource("1_2e0uu")
 
 [node name="FlamePanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 31.0
-offset_top = 440.0
+offset_top = 493.0
 offset_right = 446.0
-offset_bottom = 640.0
+offset_bottom = 693.0
 theme_override_styles/panel = ExtResource("1_2e0uu")
 
 [node name="MessagePanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 509.0
-offset_top = 440.0
+offset_top = 493.0
 offset_right = 1031.0
-offset_bottom = 640.0
+offset_bottom = 693.0
 theme_override_styles/panel = ExtResource("1_2e0uu")
 
 [node name="FoundWordsPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 1055.0
-offset_top = 65.0
+offset_top = 166.0
 offset_right = 1255.0
-offset_bottom = 365.0
+offset_bottom = 466.0
 theme_override_styles/panel = ExtResource("1_2e0uu")
 
 [node name="NextRoundButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1060.0
-offset_top = 444.0
+offset_top = 497.0
 offset_right = 1260.0
-offset_bottom = 504.0
+offset_bottom = 557.0
 theme_override_fonts/font = ExtResource("3_hp27r")
 disabled = true
 text = "Next Round"
@@ -63,20 +65,30 @@ text = "Next Round"
 [node name="ResetRoundButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1060.0
-offset_top = 511.0
+offset_top = 564.0
 offset_right = 1260.0
-offset_bottom = 571.0
+offset_bottom = 624.0
 theme_override_fonts/font = ExtResource("3_hp27r")
 text = "Reset Round"
 
 [node name="HelpButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1060.0
-offset_top = 579.0
+offset_top = 632.0
 offset_right = 1260.0
-offset_bottom = 639.0
+offset_bottom = 692.0
 theme_override_fonts/font = ExtResource("3_hp27r")
 text = "Help"
 
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1165.0
+offset_top = 33.0
+offset_right = 1255.0
+offset_bottom = 123.0
+texture_normal = ExtResource("5_e55gs")
+texture_hover = ExtResource("6_sekti")
+
 [connection signal="pressed" from="NextRoundButton" to="." method="_on_next_round_button_pressed"]
 [connection signal="pressed" from="ResetRoundButton" to="." method="_on_reset_round_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
