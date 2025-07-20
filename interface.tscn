@@ -97,6 +97,24 @@ z_index = 50
 z_as_relative = false
 layout_mode = 0
 
+[node name="Help" parent="HelpContainer/MarginContainer" index="0"]
+text = "Welcome to [img=300]res://assets/title.png[/img]
+
+This is my submission for Godot Wild Jam #83 on the theme:
+[center][img=300]res://assets/GWJ-83-Consume.png[/img][/center]
+
+The goal of this game is to get throught the rounds by solving the word puzzles using all the flames at your disposal to form new words.
+
+Drag and drop two different kind of flames  :
+* [color=red]Red Flame[/color] : it burns letters to remove them
+* [color=blue]Blue Flame[/color] : Mark a letter with  a blue flame that will appear above it. Drag that flame to another letter to sap their places
+
+All flames must be used to check for a word.
+All the possibilities have to be found to advance to the next round,
+There's a total of 8 rounds with increasing difficulty
+
+[center]GOOD LUCK AND ENJOY  ![/center]"
+
 [connection signal="pressed" from="NextRoundButton" to="." method="_on_next_round_button_pressed"]
 [connection signal="pressed" from="ResetRoundButton" to="." method="_on_reset_round_button_pressed"]
 [connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]

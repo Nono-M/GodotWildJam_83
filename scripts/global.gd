@@ -59,6 +59,7 @@ func blue_flame(letter:Node, letter_flame:bool=false):
 
 
 func burn_letter_animation(letter:Node):
+	Audio.get_node("BurnSound").play()
 	var letter_mesh = letter.get_node("Label/MeshInstance2D")
 	var letter_label = letter.get_node("Label")
 	var mesh_template = load("res://assets/letter_mesh.tres")
@@ -72,6 +73,7 @@ func burn_letter_animation(letter:Node):
 
 
 func burn_letter_animation_inverted(letter:Node):
+	Audio.get_node("BurnSound").play()
 	var letter_mesh:MeshInstance2D = letter.get_node("Label/MeshInstance2D")
 	var letter_label:Label = letter.get_node("Label")
 	var mesh_template:TextMesh = load("res://assets/letter_mesh.tres")

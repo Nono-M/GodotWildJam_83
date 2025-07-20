@@ -12,6 +12,8 @@ func _ready():
 	Global.load_json()
 	Global.load_round_data(1)
 	
+	Audio.get_node("Music").play()
+	
 	
 	#print_tree_pretty()
 

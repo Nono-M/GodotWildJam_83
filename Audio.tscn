@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://darjh1hb4dbtk"]
+
+[ext_resource type="Script" path="res://scripts/audio.gd" id="1_27dpk"]
+[ext_resource type="AudioStream" uid="uid://cv5wftytt258a" path="res://assets/word_burn_music.ogg" id="2_7cjtx"]
+[ext_resource type="AudioStream" uid="uid://bg8wro8q1h3fd" path="res://assets/burn_sound.ogg" id="3_0edna"]
+[ext_resource type="AudioStream" uid="uid://c67sqj7sfwdo6" path="res://assets/sound_click.ogg" id="4_rfc3n"]
+
+[node name="Audio" type="Node2D"]
+script = ExtResource("1_27dpk")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7cjtx")
+volume_db = -10.0
+max_polyphony = 2
+parameters/looping = true
+
+[node name="BurnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0edna")
+max_polyphony = 2
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rfc3n")
+volume_db = -10.0
+max_polyphony = 2

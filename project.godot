@@ -19,6 +19,7 @@ config/icon="res://assets/icon.svg"
 
 Global="*res://scripts/global.gd"
 Data="*res://scripts/test_data.gd"
+Audio="*res://Audio.tscn"
 
 [display]
 
