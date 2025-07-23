@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfymmbl53tptq"]
+[gd_scene load_steps=5 format=3 uid="uid://dfymmbl53tptq"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ptgmp"]
 [ext_resource type="PackedScene" uid="uid://doidypiunpli3" path="res://interface.tscn" id="2_4v44y"]
 [ext_resource type="PackedScene" uid="uid://0cyugpbhrcae" path="res://flames_box.tscn" id="2_tgysf"]
-[ext_resource type="FontFile" uid="uid://dkgjvlcpb2eh" path="res://assets/SigmarOne-Regular.ttf" id="3_g2u06"]
 [ext_resource type="Texture2D" uid="uid://bepbr0mymtvo1" path="res://assets/title.png" id="5_unr4y"]
 
 [node name="Main" type="Node2D"]
@@ -29,13 +28,11 @@ offset_bottom = 220.0
 [node name="FlamesBox" parent="." instance=ExtResource("2_tgysf")]
 position = Vector2(155, 564)
 
-[node name="MessageBox" type="Label" parent="."]
+[node name="MessageBox" type="RichTextLabel" parent="."]
 offset_left = 543.0
 offset_top = 506.0
 offset_right = 997.0
 offset_bottom = 676.0
-theme_override_fonts/font = ExtResource("3_g2u06")
-theme_override_font_sizes/font_size = 24
 autowrap_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
