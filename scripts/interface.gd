@@ -49,8 +49,10 @@ func _on_hint_button_pressed():
 
 func display_definition(result, response_code, headers, body):
 	var response_dictionary:Dictionary = JSON.parse_string(body.get_string_from_utf8())[0]
-	var random_response_meaning:Dictionary = response_dictionary["meanings"][ randi_range(0,response_dictionary["meanings"].size())-1 ]
-	var random_response_definition:String = random_response_meaning["definitions"][ randi_range(0,random_response_meaning["definitions"].size()-1) ]["definition"]
+	var max_range_meaning = response_dictionary["meanings"].size()-1 if response_dictionary["meanings"].size()-1 < 3 else 2
+	var random_response_meaning:Dictionary = response_dictionary["meanings"][ randi_range(0,max_range_meaning) ]
+	var max_range_definition = random_response_meaning["definitions"].size()-1 if random_response_meaning["definitions"].size()-1 < 3 else 2
+	var random_response_definition:String = random_response_meaning["definitions"][ randi_range(0,max_range_definition) ]["definition"]
 	
 	Global.display_message("Hint : \n%s" % random_response_definition)
 	

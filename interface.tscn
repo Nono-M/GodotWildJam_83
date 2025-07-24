@@ -105,7 +105,6 @@ texture_normal = ExtResource("5_e55gs")
 texture_hover = ExtResource("6_sekti")
 
 [node name="HelpContainer" parent="." instance=ExtResource("7_cusbs")]
-visible = false
 z_index = 50
 z_as_relative = false
 layout_mode = 0
