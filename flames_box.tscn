@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://0cyugpbhrcae"]
+[gd_scene load_steps=4 format=3 uid="uid://0cyugpbhrcae"]
 
 [ext_resource type="PackedScene" uid="uid://vf72lmhx3ytv" path="res://flame.tscn" id="1_8rsn0"]
 [ext_resource type="SpriteFrames" uid="uid://bq63whh17opll" path="res://assets/red_flame_animation.tres" id="2_thapd"]
+[ext_resource type="SpriteFrames" uid="uid://dq4vy8ai5r7n8" path="res://assets/red_flame_colourblind_animation.tres" id="3_1elen"]
 
 [node name="FlamesBox" type="Node2D"]
 
@@ -18,4 +19,6 @@ flame_color = "blue"
 [node name="YellowFlame" parent="." instance=ExtResource("1_8rsn0")]
 visible = false
 position = Vector2(200, 0)
+sprite_frames = ExtResource("3_1elen")
+frame_progress = 0.0
 flame_color = "yellow"

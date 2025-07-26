@@ -47,6 +47,16 @@ func _on_hint_button_pressed():
 		if error != OK:
 			push_error("HTTP request to dictionary api failed")
 
+
+func _on_colourblind_button_toggled(toggled_on):
+	if toggled_on :
+		get_tree().root.get_node("Main/FlamesBox/RedFlame").sprite_frames = load("res://assets/red_flame_colourblind_animation.tres")
+		get_tree().root.get_node("Main/FlamesBox/RedFlame").play()
+	else :
+		get_tree().root.get_node("Main/FlamesBox/RedFlame").sprite_frames = load("res://assets/red_flame_animation.tres")
+		get_tree().root.get_node("Main/FlamesBox/RedFlame").play()
+
+
 func display_definition(result, response_code, headers, body):
 	var response_dictionary:Dictionary = JSON.parse_string(body.get_string_from_utf8())[0]
 	var max_range_meaning = response_dictionary["meanings"].size()-1 if response_dictionary["meanings"].size()-1 < 3 else 2

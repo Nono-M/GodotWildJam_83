@@ -1,14 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://doidypiunpli3"]
+[gd_scene load_steps=12 format=3 uid="uid://doidypiunpli3"]
 
 [ext_resource type="StyleBox" uid="uid://chg25468grsuo" path="res://styles/panel_styles.tres" id="1_2e0uu"]
 [ext_resource type="Script" path="res://scripts/interface.gd" id="1_tpu5y"]
 [ext_resource type="Texture2D" uid="uid://dvfhk4120augt" path="res://assets/background_ui.png" id="2_kwj6f"]
 [ext_resource type="FontFile" uid="uid://dkgjvlcpb2eh" path="res://assets/SigmarOne-Regular.ttf" id="3_hp27r"]
+[ext_resource type="Texture2D" uid="uid://c2m05u7n0jbkp" path="res://assets/colorblind_eye.png" id="5_1somc"]
 [ext_resource type="Texture2D" uid="uid://cg5qphhx4e1sv" path="res://assets/button_help.png" id="5_3spdy"]
 [ext_resource type="Texture2D" uid="uid://d26niol4iv3d5" path="res://assets/button_quit.png" id="5_e55gs"]
 [ext_resource type="Texture2D" uid="uid://bnxcbyxvuu8f" path="res://assets/button_hover_help.png" id="6_e5gs6"]
 [ext_resource type="Texture2D" uid="uid://mgp0uwnrvh3o" path="res://assets/button_hover_quit.png" id="6_sekti"]
 [ext_resource type="PackedScene" uid="uid://dqdrd3n4sctvu" path="res://help_container.tscn" id="7_cusbs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nxqnu"]
 
 [node name="Interface" type="Control"]
 layout_mode = 3
@@ -83,6 +86,27 @@ offset_bottom = 692.0
 theme_override_fonts/font = ExtResource("3_hp27r")
 text = "Hint"
 
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1070.0
+offset_top = 34.0
+offset_right = 1110.0
+offset_bottom = 74.0
+tooltip_text = "Colourblind Mode"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(20, 19)
+texture = ExtResource("5_1somc")
+
+[node name="ColourblindButton" type="CheckButton" parent="Control"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 39.0
+offset_right = 42.0
+offset_bottom = 63.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nxqnu")
+
 [node name="HelpButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1128.0
@@ -130,6 +154,7 @@ There's a total of 8 rounds with increasing difficulty
 [connection signal="pressed" from="NextRoundButton" to="." method="_on_next_round_button_pressed"]
 [connection signal="pressed" from="ResetRoundButton" to="." method="_on_reset_round_button_pressed"]
 [connection signal="pressed" from="HintButton" to="." method="_on_hint_button_pressed"]
+[connection signal="toggled" from="Control/ColourblindButton" to="." method="_on_colourblind_button_toggled"]
 [connection signal="pressed" from="HelpButton" to="." method="_on_help_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="HelpContainer/MarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]

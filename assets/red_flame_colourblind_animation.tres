@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://dq4vy8ai5r7n8"]
+
+[ext_resource type="Texture2D" uid="uid://bo36sy2q3871b" path="res://assets/colourblind_red_flame.png" id="1_7vdsa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg12u"]
+atlas = ExtResource("1_7vdsa")
+region = Rect2(0, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ydo4"]
+atlas = ExtResource("1_7vdsa")
+region = Rect2(50, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkm8x"]
+atlas = ExtResource("1_7vdsa")
+region = Rect2(100, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7i4a"]
+atlas = ExtResource("1_7vdsa")
+region = Rect2(150, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rili"]
+atlas = ExtResource("1_7vdsa")
+region = Rect2(200, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8nnm"]
+atlas = ExtResource("1_7vdsa")
+region = Rect2(250, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uq7p"]
+atlas = ExtResource("1_7vdsa")
+region = Rect2(300, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3g1r"]
+atlas = ExtResource("1_7vdsa")
+region = Rect2(350, 0, 50, 60)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg12u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ydo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkm8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7i4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rili")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8nnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uq7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3g1r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
