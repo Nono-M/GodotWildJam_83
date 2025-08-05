@@ -57,7 +57,7 @@ jobs:
         fail-fast: true
         matrix:
           channel:
-            - html5
+            - web
       steps:
         - uses: actions/download-artifact@v4
           with:
