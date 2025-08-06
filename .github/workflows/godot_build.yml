@@ -44,12 +44,12 @@ jobs:
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
           godot --headless --verbose --export-release "Web" "$EXPORT_DIR/web/index.html"
-          zip build/$EXPORT_NAME.zip "$EXPORT_DIR/web/"
+          zip build/${{ env.EXPORT_NAME}}.zip "$EXPORT_DIR/web/"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: web
-          path: build/$EXPORT_NAME.zip
+          path: build/${{ env.EXPORT_NAME}}.zip
   deploy:
       name: Upload to Itch
       runs-on: ubuntu-latest
