@@ -69,5 +69,4 @@ jobs:
             gameData: ./build/${{ matrix.channel }}
             itchUsername: ${{ env.ITCH_USERNAME }}
             itchGameId: ${{ env.ITCH_GAME_ID }}
-            buildChannel: ${{ matrix.channel }}
-            buildNumber: ${{ github.run_number }}
+            buildChannel: html5
