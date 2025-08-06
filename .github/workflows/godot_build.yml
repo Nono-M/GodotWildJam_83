@@ -18,7 +18,7 @@ env:
   EXPORT_NAME: GodotWildJam_83
   PROJECT_PATH: .
   ITCH_USERNAME: fallup-games
-  ITCH_GAME_ID: 3726690
+  ITCH_GAME_ID: word-burn
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
